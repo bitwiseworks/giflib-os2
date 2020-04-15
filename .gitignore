@@ -4,6 +4,9 @@
 *.la
 *.so
 *.so.*
+*.dll
+*.def
+*.exe
 gif2raw
 gif2rgb
 gifasm
