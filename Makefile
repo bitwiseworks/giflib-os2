@@ -145,7 +145,7 @@ install-include:
 ifeq ($(OS),OS/2)
 install-lib:
 	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
-	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif.a"
+	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif_dll.a"
 	$(INSTALL) -m 755 $(DLLNAME) "$(DESTDIR)$(LIBDIR)/$(DLLNAME)"
 else
 install-lib:
