@@ -73,6 +73,7 @@ gifclrmp-regress:
 	    stem=`basename $${test} | sed -e "s/.gif$$//"`; \
 	    if echo "gifclrmap: Checking colormap of $${test}" >&2; \
 	    $(UTILS)/gifclrmp <$${test} > $@.$${stem}.regress 2>&1; \
+	    dos2unix $@.$${stem}.regress; \
 	    then diff -u $${stem}.map $@.$${stem}.regress; \
 	    else echo "*** Nonzero return status on $${test}!"; exit 1; fi; \
 	done
@@ -136,6 +137,7 @@ giftext-regress:
 	    stem=`basename $${test} | sed -e "s/.gif$$//"`; \
 	    if echo "giftext: Checking text dump of $${test}" >&2; \
 	    $(UTILS)/giftext <$${test} > $@.$${stem}.regress 2>&1; \
+	    dos2unix $@.$${stem}.regress; \
 	    then diff -u $${stem}.dmp  $@.$${stem}.regress; \
 	    else echo "*** Nonzero return status on $${test}!"; exit 1; fi; \
 	done
