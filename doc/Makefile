@@ -1,7 +1,7 @@
 .SUFFIXES: .xml .html .txt .adoc .1
 
 .xml.html:
-	xmlto xhtml-nochunks $<
+	xmlto --stringparam generate.consistent.ids=1 xhtml-nochunks $<
 
 .xml.1:
 	xmlto man $<
