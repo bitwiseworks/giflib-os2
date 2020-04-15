@@ -32,6 +32,9 @@ with our utilities mainly interesting as test tools.
 #ifdef _WIN32
 #include <io.h>
 #endif /* _WIN32 */
+#ifdef __OS2__
+#include <io.h>
+#endif
 
 #include "gif_lib.h"
 #include "getarg.h"
@@ -111,6 +114,9 @@ static void LoadRGB(char *FileName,
 #ifdef _WIN32
 	_setmode(0, O_BINARY);
 #endif /* _WIN32 */
+#ifdef __OS2__
+	setmode(0, O_BINARY);
+#endif 
 
 	rgbfp[0] = stdin;
     }

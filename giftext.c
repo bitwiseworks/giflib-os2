@@ -15,6 +15,9 @@ SPDX-License-Identifier: MIT
 #ifdef _WIN32
 #include <io.h>
 #endif /* _WIN32 */
+#ifdef __OS2__
+#include <io.h>
+#endif
 
 #include "gif_lib.h"
 #include "getarg.h"
@@ -96,6 +99,9 @@ int main(int argc, char **argv)
 #ifdef _WIN32
 	_setmode(1, O_BINARY);             /* Make sure it is in binary mode. */
 #endif /* _WIN32 */
+#ifdef __OS2__
+	setmode(1, O_BINARY);             /* Make sure it is in binary mode. */
+#endif
     }
     else {
 	printf("\n%s:\n\n\tScreen Size - Width = %d, Height = %d.\n",

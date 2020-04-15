@@ -15,6 +15,10 @@ SPDX-License-Identifier: MIT
 
 #include "gif_lib.h"
 #include "getarg.h"
+#ifdef __OS2__
+#include <fcntl.h>
+#include <io.h>
+#endif
 
 #define PROGRAM_NAME	"gifbuild"
 
@@ -767,6 +771,9 @@ static void Gif2Icon(char *FileName,
 	exit(EXIT_FAILURE);
     }
 
+#ifdef __OS2__
+	setmode(1, O_BINARY);
+#endif 
     printf("screen width %d\nscreen height %d\n",
 	   GifFile->SWidth, GifFile->SHeight);
 
