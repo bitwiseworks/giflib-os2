@@ -43,11 +43,11 @@ LIBPOINT=0
 LIBVER=$(LIBMAJOR).$(LIBMINOR).$(LIBPOINT)
 
 SOURCES = dgif_lib.c egif_lib.c gifalloc.c gif_err.c gif_font.c \
-	gif_hash.c openbsd-reallocarray.c
+	gif_hash.c openbsd-reallocarray.c quantize.c
 HEADERS = gif_hash.h  gif_lib.h  gif_lib_private.h
 OBJECTS = $(SOURCES:.c=.o)
 
-USOURCES = qprintf.c quantize.c getarg.c 
+USOURCES = qprintf.c getarg.c 
 UHEADERS = getarg.h
 UOBJECTS = $(USOURCES:.c=.o)
 
